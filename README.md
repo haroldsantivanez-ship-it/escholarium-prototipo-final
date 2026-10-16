@@ -1,84 +1,71 @@
-# Escholarium — Prototipo navegable 100%
+# Escholarium · Prototipo 100 %
 
-Prototipo académico de **Escholarium**, plataforma con inteligencia artificial para fortalecer la investigación escolar. Representa el recorrido completo de los **cuatro perfiles** con contenido precargado. No usa base de datos ni guarda información: al recargar la página todo vuelve a su estado inicial.
+Prototipo navegable de **Escholarium**, plataforma web multiinstitucional para fortalecer la investigación escolar con **Eli**, un tutor de inteligencia artificial supervisado por el docente.
 
-> Este prototipo valida navegación, organización de pantallas y comprensión del servicio. La versión funcional (con base de datos, inicio de sesión real y Eli conectado a IA) se desarrolla por separado.
+Este prototipo es **la misma interfaz de la plataforma funcional**: mismas pantallas, logo, pasarela de perfiles, Eli en 3D y funciones. La diferencia es que funciona **sin servidor ni base de datos**: los datos demostrativos viven en el navegador y se restablecen al cerrar la pestaña.
 
 ## Cómo abrirlo
 
-**Opción 1 (más simple):** descomprime el ZIP y abre `index.html` con doble clic.
+1. Descomprime el ZIP.
+2. Haz **doble clic en `index.html`**.
 
-**Opción 2 (recomendada):** abre la carpeta en Visual Studio Code y usa la extensión **Live Server**, o ejecuta dentro de la carpeta:
-
-```bash
-python -m http.server 4173
-```
-
-y visita `http://localhost:4173`.
-
-No necesita instalar paquetes, conexión a internet ni compilación. Si el navegador no admite WebGL, el prototipo muestra automáticamente una vista de respaldo de Eli.
+No necesita instalar nada ni conexión a internet. Se recomienda Chrome o Edge actualizados.
 
 ## Cuentas demostrativas
 
-Selecciona siempre **Colegio Santa María de Jesús**. El formulario se completa solo al elegir el perfil.
+Contraseña de todas las cuentas: **`Demo2026!`** (en el inicio de sesión, el botón **«Usar cuenta demo»** la completa).
 
-| Perfil | Correo | Contraseña |
+| Perfil | Correo | Institución |
 |---|---|---|
-| Estudiante | `estudiante@demo.edu.pe` | `Demo2026!` |
-| Docente / tutor | `docente@demo.edu.pe` | `Demo2026!` |
-| Administrador institucional | `administrador@demo.edu.pe` | `Demo2026!` |
-| Familia autorizada | `familia@demo.edu.pe` | `Demo2026!` |
+| Estudiante | `estudiante@demo.edu.pe` | Colegio Santa María de Jesús |
+| Docente / tutor | `docente@demo.edu.pe` | Colegio Santa María de Jesús |
+| Administrador institucional | `administrador@demo.edu.pe` | Colegio Santa María de Jesús |
+| Familia autorizada | `familia@demo.edu.pe` | Colegio Santa María de Jesús |
 
-Elegir **Institución piloto 02**, otro correo o una contraseña incorrecta muestra el mensaje de acceso denegado.
+También hay estudiantes adicionales (`diego.ramos@`, `lucia.torres@`, `andrea.perez@demo.edu.pe`) y la **Institución piloto 02** (`estudiante@piloto02.edu.pe`, `docente@piloto02.edu.pe`) para mostrar que cada colegio solo ve sus datos.
 
-## Qué incluye
+## Qué se puede hacer
 
-- **Portada** de Escholarium como plataforma multiinstitucional, con Eli en 3D (saludo, sonrisa, movimientos y dos vueltas al anillo principal) y el mensaje *«Investigar es aprender a pensar por ti mismo»*.
-- **Estudiante:** inicio, proyectos con **8 etapas** (tema, pregunta, búsqueda, evaluación de fuentes, notas, síntesis, citación y revisión), conversación guiada con Eli, fuentes evaluadas con **7 criterios** (autoría, actualidad, procedencia, evidencia, propósito, pertinencia y contraste) y bitácora.
-- **Docente / tutor:** supervisión, proyectos, estudiantes, alertas revisables y reportes demostrativos.
-- **Administrador institucional:** usuarios y roles, secciones, **Mi institución** y auditoría. Su alcance se limita a su propio colegio.
-- **Familia autorizada:** vista móvil con el avance autorizado agrupado en 5 fases, reportes, información escolar ficticia y notificaciones.
-- **Eli en 3D** en la portada (coreografía completa), en la selección de perfiles y en el encabezado del chat (versión compacta: saludo, reposo y sonrisa).
-- **Todos los botones responden** con una ventana de contenido:
+**Estudiante**
+- Crear proyectos y avanzar por **8 etapas**: las etapas propias se cierran con **«Completar etapa»** y el docente revisa en **3 momentos** (Problema y pregunta, Notas y evidencias, Revisión y entrega). Mientras el docente revisa, el estudiante sigue avanzando.
+- Conversar con **Eli**, que recuerda el proyecto activo, entiende lenguaje informal y **se niega a hacer el trabajo** (la interacción se marca para el docente). En el prototipo Eli responde en **modo pautas**; en la plataforma funcional responde con IA real.
+- **Buscar fuentes reales** (artículos académicos verificados en OpenAlex, con DOI), registrarlas con un clic y evaluarlas con **7 criterios**.
+- Notas de evidencia, síntesis con versiones, **referencias APA 7 automáticas** y **bitácora** que se llena sola, con **«Exportar resumen»** (imprimible o PDF).
 
-| Perfil | Botón | Qué muestra |
-|---|---|---|
-| Estudiante | Nuevo proyecto | Formulario; el proyecto aparece en la lista en la etapa 1 de 8 |
-| Estudiante | Exportar resumen (bitácora) | Documento con el proyecto, la pregunta y las decisiones registradas |
-| Docente | Registrar orientación | Formulario para enviar una orientación a un estudiante |
-| Docente | Generar reporte | Reporte de la sección con indicadores y detalle por estudiante |
-| Administrador | Nuevo usuario | Formulario; el usuario aparece en la tabla como «Invitado» |
-| Administrador | Editar permisos | Qué puede y qué no puede hacer el perfil, y estado de la cuenta |
-| Administrador | Crear sección / Configurar | Formulario de sección; configuración de docente, estudiantes y proyecto |
-| Administrador | Exportar registro | Registro de auditoría con eventos de seguridad |
-| Familia | Ver detalle | Notas por curso, asistencia por mes y estado de pagos (ficticios) |
-| Familia | Preferencias | Avisos que desea recibir y frecuencia |
+**Docente / tutor**
+- Ver los proyectos de su sección, **aprobar revisiones o pedir cambios** con retroalimentación (y decidir si se comparte con la familia).
+- **Alertas** para revisión humana: interacciones con Eli, cambios pendientes, inactividad y fuentes incompletas. Cada alerta se marca como revisada, atendida o descartada, con nota.
+- **Reportes** de la sección y botón **«Generar reporte»** (imprimible o PDF).
+- **«Registrar orientación»**: el estudiante la ve en su bitácora.
 
-  Los documentos tienen el botón **Imprimir o guardar como PDF**. Lo que se crea en los formularios se ve en pantalla, pero no se guarda.
-- Navegación en la misma pestaña, barra lateral fija, posición de desplazamiento conservada y diseño adaptable a computadora, tableta y teléfono.
+**Administrador institucional**
+- Crear cuentas con **contraseña temporal** (se cambia en el primer ingreso), desactivar o reactivar, restablecer contraseñas y **ver los permisos** de cada perfil.
+- Crear secciones, matricular, asignar docentes y vincular familias.
+- **Auditoría** con **«Exportar registro»** (Excel) e impresión.
 
-## Límites de esta versión
+**Familia autorizada**
+- **Proyecto:** avance en **5 fases**, etapa actual y cómo acompañar (sin borradores ni conversaciones con Eli).
+- **Reportes:** decisiones del docente y los comentarios que él decidió compartir.
+- **Notificaciones** con **«Preferencias»** de avisos e **información escolar** de contexto (datos ficticios).
 
-- No hay autenticación real, base de datos ni conexión con sistemas del colegio.
-- Eli responde con un flujo guiado predeterminado; no usa un modelo de inteligencia artificial.
-- Notas, asistencia y estado de pagos son ficticios y solo de consulta; no hay transacciones.
-- La vista familiar representa el flujo móvil; la plataforma de la futura aplicación se decidirá después.
-- WhatsApp y otras integraciones quedan para una fase posterior.
+Prueba sugerida: entra como estudiante y envía «Notas y evidencias» al docente; cierra sesión y entra como docente para aprobarla (marca «compartir con la familia»); luego entra como familia y verás el avance y el comentario.
 
-## Publicarlo
+Para que se vea con contenido desde el inicio, el prototipo trae casos de ejemplo: una alerta de Eli (Diego), un proyecto sin actividad (Andrea) y una revisión aprobada compartida con la familia (María).
 
-La carpeta puede subirse tal cual a un repositorio de GitHub y publicarse en **Netlify** o **Vercel** como sitio estático: sin comando de compilación y con la raíz de la carpeta como directorio de publicación.
+## Límites del prototipo
+
+- No hay servidor: los cambios se guardan solo en la pestaña abierta y se pierden al cerrarla.
+- Eli usa respuestas guiadas (modo pautas); la IA real está en la plataforma funcional.
+- El buscador muestra resultados reales precargados; en la plataforma funcional consulta OpenAlex en vivo.
 
 ## Archivos
 
 | Archivo | Contenido |
 |---|---|
-| `index.html` | Estructura de pantallas |
-| `styles.css` | Sistema visual (colores, tipografía, componentes) |
-| `app.js` | Navegación, perfiles, validaciones y contenido demostrativo |
-| `eli-3d.js` | Código fuente de la escena y animaciones de Eli |
-| `eli-3d.bundle.js` | Versión compilada que usa el navegador (incluye el modelo) |
-| `eli-loader-guard.js` | Activa la vista de respaldo si el 3D no carga |
-| `assets/Eli_Avatar_3D.glb` | Modelo tridimensional oficial de Eli |
-| `assets/eli-avatar.png` | Imagen de respaldo si el navegador no admite 3D |
-| `vendor/` | Motor 3D (Three.js) y su licencia |
+| `index.html` | Página del prototipo |
+| `assets/escholarium.js` | Aplicación completa (interfaz, estilos, datos demostrativos y modelo 3D de Eli) |
+| `favicon.png` | Ícono de la pestaña |
+
+Se genera desde el código de la plataforma funcional con `npm run build:prototipo` (carpeta `frontend`), para que ambos se mantengan iguales.
+
+Incluye bibliotecas de código abierto con licencia MIT: React, React Router, TanStack Query y Three.js.
