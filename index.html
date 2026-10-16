@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#6f0d18">
+  <meta name="description" content="Prototipo web de Escholarium para acompañar la investigación escolar con la guía de Eli.">
+  <title>Escholarium | Prototipo navegable</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='15' fill='%236f0d18'/%3E%3Cpath d='M11 24 32 13l21 11-21 11L11 24Zm8 7v11c7 7 19 7 26 0V31' fill='none' stroke='%23e0b23c' stroke-width='4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div id="app" class="app-root">
+    <section id="landing-screen" class="screen screen--active landing-screen" aria-labelledby="landing-title">
+      <header class="public-header public-header--dark">
+        <button class="brand brand--button" type="button" data-action="go-home" aria-label="Ir al inicio de Escholarium">
+          <span class="brand__mark" aria-hidden="true"><svg class="icon"><use href="#icon-cap"></use></svg></span>
+          <span><strong>Escholarium</strong><small>Investigación escolar acompañada</small></span>
+        </button>
+        <nav class="public-nav" aria-label="Navegación principal">
+          <a href="#experiencia">Experiencia</a>
+          <a href="#como-funciona">Perfiles</a>
+          <a href="#piloto">Piloto</a>
+        </nav>
+        <button class="button button--glass button--compact" type="button" data-action="show-access">Entrar al campus <svg class="icon"><use href="#icon-arrow"></use></svg></button>
+      </header>
+
+      <main>
+        <section class="hero hero--immersive">
+          <div class="hero-grid" aria-hidden="true"></div>
+          <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
+          <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+          <div class="hero__content">
+            <h1 id="landing-title">Investigar es aprender<br><span>a pensar por ti mismo.</span></h1>
+            <p>Escholarium acompaña al estudiante desde la pregunta inicial hasta la sustentación. Eli orienta el proceso y el docente conserva la supervisión académica.</p>
+            <div class="hero__actions">
+              <button class="button button--gold" type="button" data-action="show-access">Explorar los cuatro perfiles <svg class="icon"><use href="#icon-arrow"></use></svg></button>
+              <button class="button button--outline-light" type="button" data-action="open-student-demo">Ver experiencia del estudiante</button>
+            </div>
+
+            <div class="research-route" aria-label="Ruta de investigación de Escholarium">
+              <div class="route-step route-step--active"><span>01</span><div><strong>Pregunta</strong><small>Delimitar</small></div></div>
+              <div class="route-line"></div>
+              <div class="route-step"><span>02</span><div><strong>Fuentes</strong><small>Contrastar</small></div></div>
+              <div class="route-line"></div>
+              <div class="route-step"><span>03</span><div><strong>Síntesis</strong><small>Construir</small></div></div>
+              <div class="route-line"></div>
+              <div class="route-step"><span>04</span><div><strong>Sustento</strong><small>Explicar</small></div></div>
+            </div>
+          </div>
+
+          <div class="hero__visual" aria-label="Eli, asistente de inteligencia artificial de Escholarium">
+            <div class="eli-stage">
+              <div class="eli-stage__halo"></div>
+              <div class="orbit orbit--one"><span></span></div>
+              <div class="orbit orbit--two"><span></span></div>
+              <div class="eli-stage__core"></div>
+              <div class="eli-3d" data-eli-3d data-eli-mode="stage" data-model-url="assets/Eli_Avatar_3D.glb">
+                <canvas class="eli-3d__canvas" aria-hidden="true"></canvas>
+                <img class="eli-3d__fallback" src="assets/eli-avatar.png" alt="Eli, asistente robótico de Escholarium">
+                <div class="eli-3d__loader" role="status" aria-live="polite">
+                  <span></span>
+                  <strong>Preparando a Eli en 3D</strong>
+                </div>
+              </div>
+              <p class="visually-hidden">Eli saluda, sonríe, mueve brazos y piernas y recorre automáticamente dos veces el anillo antes de regresar a su posición.</p>
+              <div class="eli-status"><span class="status-dot"></span><div><strong data-eli-status-title>Eli está listo</strong><small data-eli-status-detail>Orientación activa · Supervisión docente</small></div></div>
+            </div>
+            <div class="floating-insight floating-insight--question"><span>Pregunta en revisión</span><strong>¿Es clara y verificable?</strong></div>
+            <div class="floating-insight floating-insight--source"><span>Fuente registrada</span><strong>5 de 7 criterios</strong><i></i></div>
+            <div class="floating-insight floating-insight--trace"><span>Bitácora</span><strong>Decisión documentada</strong></div>
+          </div>
+        </section>
+
+        <section class="experience-section" id="experiencia" aria-labelledby="experience-title">
+          <div class="experience-heading">
+            <div>
+              <span class="eyebrow">Un proceso que sí se puede explicar</span>
+              <h2 id="experience-title">La entrega final importa.<br>El camino también.</h2>
+            </div>
+            <p>La plataforma conserva preguntas, fuentes, decisiones y retroalimentación para que el aprendizaje no quede reducido a un documento terminado.</p>
+          </div>
+          <div class="experience-grid">
+            <article class="experience-card experience-card--primary"><span class="experience-card__index">01</span><div class="experience-card__icon"><svg class="icon"><use href="#icon-ai"></use></svg></div><h3>Eli orienta</h3><p>Pregunta, ofrece pistas y solicita evidencia sin redactar el trabajo completo.</p><small>Educación con Liderazgo Inteligente</small></article>
+            <article class="experience-card"><span class="experience-card__index">02</span><div class="experience-card__icon"><svg class="icon"><use href="#icon-search"></use></svg></div><h3>El estudiante construye</h3><p>Formula, contrasta, sintetiza y justifica sus propias decisiones.</p></article>
+            <article class="experience-card"><span class="experience-card__index">03</span><div class="experience-card__icon"><svg class="icon"><use href="#icon-users"></use></svg></div><h3>El docente supervisa</h3><p>Revisa el proceso, interpreta alertas y brinda retroalimentación humana.</p></article>
+            <article class="experience-card experience-card--metric"><span>Proceso trazable</span><strong>8</strong><p>etapas conectadas en una sola bitácora académica.</p></article>
+          </div>
+        </section>
+
+        <section class="profiles-section" id="como-funciona" aria-labelledby="flow-title">
+          <div class="profiles-heading">
+            <div><span class="eyebrow">Una plataforma, cuatro experiencias</span><h2 id="flow-title">Cada persona ve lo que necesita.</h2></div>
+            <button class="text-link" type="button" data-action="show-access">Abrir selector de perfiles <svg class="icon"><use href="#icon-arrow"></use></svg></button>
+          </div>
+          <div class="profile-preview-grid" role="list">
+            <button class="profile-preview profile-preview--student" type="button" data-role="student" role="listitem"><span class="profile-preview__number">01</span><div class="profile-preview__icon"><svg class="icon"><use href="#icon-book"></use></svg></div><h3>Estudiante</h3><p>Investiga con Eli y registra evidencias.</p><span>Ingresar como estudiante <svg class="icon"><use href="#icon-arrow"></use></svg></span></button>
+            <button class="profile-preview profile-preview--teacher" type="button" data-role="teacher" role="listitem"><span class="profile-preview__number">02</span><div class="profile-preview__icon"><svg class="icon"><use href="#icon-users"></use></svg></div><h3>Docente o tutor</h3><p>Supervisa proyectos y revisa alertas.</p><span>Ingresar como docente <svg class="icon"><use href="#icon-arrow"></use></svg></span></button>
+            <button class="profile-preview profile-preview--admin" type="button" data-role="admin" role="listitem"><span class="profile-preview__number">03</span><div class="profile-preview__icon"><svg class="icon"><use href="#icon-settings"></use></svg></div><h3>Administrador</h3><p>Gestiona usuarios, secciones y permisos.</p><span>Ingresar como administrador <svg class="icon"><use href="#icon-arrow"></use></svg></span></button>
+            <button class="profile-preview profile-preview--family" type="button" data-role="family" role="listitem"><span class="profile-preview__number">04</span><div class="profile-preview__icon"><svg class="icon"><use href="#icon-family"></use></svg></div><h3>Familia autorizada</h3><p>Consulta avances e información aprobada.</p><span>Ver experiencia familiar <svg class="icon"><use href="#icon-arrow"></use></svg></span></button>
+          </div>
+        </section>
+
+        <section class="pilot-section" id="piloto" aria-labelledby="pilot-title">
+          <div class="pilot-card">
+            <div class="pilot-card__map" aria-hidden="true"><span></span><span></span><span></span><i></i></div>
+            <div class="pilot-card__copy"><span class="eyebrow eyebrow--light">Escenario académico propuesto</span><h2 id="pilot-title">Un piloto delimitado antes de escalar.</h2><p>Una sección de 5.º de secundaria de un colegio privado de Santa Anita, durante ocho semanas y sujeto a autorización institucional.</p></div>
+            <div class="pilot-card__facts"><div><strong>Santa Anita</strong><span>Lima, Perú</span></div><div><strong>8 semanas</strong><span>Duración propuesta</span></div><div><strong>Datos protegidos</strong><span>Acceso por institución</span></div></div>
+          </div>
+        </section>
+      </main>
+      <footer class="public-footer"><span>© 2026 Escholarium</span><span>Prototipo académico · Datos demostrativos</span></footer>
+    </section>
+
+    <section id="access-screen" class="screen access-screen access-screen--gateway" aria-labelledby="access-title" hidden>
+      <div class="access-grid" aria-hidden="true"></div>
+      <button class="back-link back-link--light" type="button" data-action="go-home"><svg class="icon"><use href="#icon-back"></use></svg> Volver al inicio</button>
+      <div class="access-brand"><span class="brand__mark"><svg class="icon"><use href="#icon-cap"></use></svg></span><div><strong>Escholarium</strong><small>Campus digital</small></div></div>
+      <div class="access-shell access-shell--gateway">
+        <aside class="access-copy access-copy--gateway">
+          <span class="access-kicker"><span class="signal-pulse"></span> Acceso demostrativo seguro</span>
+          <h1 id="access-title">Tu espacio cambia.<br><span>El propósito permanece.</span></h1>
+          <p>Cada perfil recibe solo las herramientas y la información necesarias para participar en el proceso de investigación.</p>
+          <div class="access-eli">
+            <div class="access-eli__avatar"><div class="eli-3d eli-3d--compact" data-eli-3d data-eli-mode="compact" role="img" aria-label="Eli, asistente de Escholarium"><canvas class="eli-3d__canvas" aria-hidden="true"></canvas><div class="eli-3d__loader" role="status"><span></span><strong>Eli</strong></div></div></div>
+            <div><strong>Eli acompaña el recorrido</strong><span>Las decisiones académicas permanecen bajo supervisión humana.</span></div>
+          </div>
+          <div class="access-trust"><span><svg class="icon"><use href="#icon-lock"></use></svg> Datos simulados</span><span><svg class="icon"><use href="#icon-building"></use></svg> Acceso institucional</span></div>
+        </aside>
+        <main class="access-panel">
+          <div class="access-panel__header"><div><span class="eyebrow">Selecciona tu perfil</span><h2>¿Cómo participarás hoy?</h2></div><span class="access-step">01 / 02</span></div>
+          <div class="role-grid" id="role-grid"></div>
+          <p class="access-panel__note">Después seleccionarás la institución e ingresarás con una cuenta demostrativa.</p>
+        </main>
+      </div>
+    </section>
+
+    <section id="login-screen" class="screen login-screen" aria-labelledby="login-title" hidden>
+      <div class="login-layout">
+        <aside class="login-aside">
+          <button class="back-link back-link--light" type="button" data-action="show-access"><svg class="icon"><use href="#icon-back"></use></svg> Elegir otro perfil</button>
+          <div class="login-aside__content">
+            <span class="brand__mark brand__mark--large"><svg class="icon"><use href="#icon-cap"></use></svg></span>
+            <span class="eyebrow eyebrow--light">Escholarium</span>
+            <h2>Un acceso seguro para cada comunidad educativa.</h2>
+            <p>El prototipo utiliza cuentas demostrativas y no envía información real.</p>
+          </div>
+        </aside>
+        <main class="login-main">
+          <form id="login-form" class="login-card" novalidate>
+            <span id="login-kicker" class="eyebrow">Acceso</span>
+            <h1 id="login-title">Ingresa a tu espacio</h1>
+            <p id="login-description">Usa las credenciales demostrativas del perfil seleccionado.</p>
+
+            <label class="field"><span>Selecciona tu institución</span>
+              <select id="institution" name="institution" required>
+                <option value="santa-maria">Colegio Santa María de Jesús</option>
+                <option value="piloto-02">Institución piloto 02</option>
+              </select>
+            </label>
+            <label class="field"><span>Correo institucional</span><input id="email" name="email" type="email" autocomplete="username" required></label>
+            <label class="field"><span>Contraseña</span>
+              <span class="password-field"><input id="password" name="password" type="password" autocomplete="current-password" required><button type="button" id="toggle-password" aria-label="Mostrar contraseña"><svg class="icon"><use href="#icon-eye"></use></svg></button></span>
+            </label>
+            <div id="login-error" class="form-alert" role="alert" aria-live="polite" hidden></div>
+            <button class="button button--primary button--full" type="submit">Ingresar <svg class="icon"><use href="#icon-arrow"></use></svg></button>
+            <div class="demo-note"><strong>Prototipo navegable</strong><span>No guarda ni envía información. Todo el contenido es demostrativo.</span></div>
+          </form>
+        </main>
+      </div>
+    </section>
+
+    <section id="portal-screen" class="screen portal-screen" aria-label="Portal de Escholarium" hidden>
+      <aside class="sidebar" id="sidebar">
+        <div class="sidebar__brand"><span class="brand__mark"><svg class="icon"><use href="#icon-cap"></use></svg></span><span><strong>Escholarium</strong><small id="sidebar-role">Portal</small></span></div>
+        <div class="institution-chip"><span>Institución</span><strong>Santa María de Jesús</strong></div>
+        <nav id="portal-nav" class="sidebar-nav" aria-label="Navegación del portal"></nav>
+        <div class="sidebar__footer">
+          <div class="demo-badge"><span class="status-dot"></span> Prototipo sin almacenamiento</div>
+          <button class="sidebar-logout" type="button" data-action="logout"><svg class="icon"><use href="#icon-logout"></use></svg> Cerrar sesión</button>
+        </div>
+      </aside>
+      <div class="portal-shell">
+        <header class="portal-header">
+          <button id="menu-toggle" class="icon-button menu-toggle" type="button" aria-label="Abrir menú" aria-expanded="false"><svg class="icon"><use href="#icon-menu"></use></svg></button>
+          <div><span id="view-kicker" class="portal-kicker">Resumen</span><h1 id="view-title">Inicio</h1></div>
+          <div class="portal-header__actions">
+            <button class="icon-button notification-button" type="button" aria-label="Notificaciones"><svg class="icon"><use href="#icon-bell"></use></svg><span></span></button>
+            <div class="user-chip"><span id="user-initials">MG</span><div><strong id="user-name">María González</strong><small id="user-role-label">Estudiante</small></div></div>
+          </div>
+        </header>
+        <main id="portal-content" class="portal-content" tabindex="-1"></main>
+      </div>
+      <div id="sidebar-overlay" class="sidebar-overlay" data-action="close-menu"></div>
+    </section>
+  </div>
+
+  <div id="toast-region" class="toast-region" aria-live="polite" aria-atomic="true"></div>
+
+  <dialog id="source-dialog" class="modal">
+    <form id="source-form" method="dialog">
+      <div class="modal__header"><div><span class="eyebrow">Vista demostrativa</span><h2>Registrar una fuente</h2></div><button class="icon-button" type="button" data-action="close-source-dialog" aria-label="Cerrar"><svg class="icon"><use href="#icon-close"></use></svg></button></div>
+      <label class="field"><span>Título de la fuente</span><input name="title" required placeholder="Ej. Informe sobre alfabetización mediática"></label>
+      <label class="field"><span>Autor o institución</span><input name="author" required placeholder="Nombre del autor o entidad"></label>
+      <label class="field"><span>Enlace</span><input name="url" type="url" required placeholder="https://..."></label>
+      <label class="field"><span>¿Por qué es útil?</span><textarea name="reason" rows="3" required placeholder="Explica su relación con tu pregunta"></textarea></label>
+      <p class="prototype-note">Este formulario solo demuestra el recorrido. La información ingresada no se almacena.</p>
+      <div class="modal__actions"><button class="button button--ghost" type="button" data-action="close-source-dialog">Cancelar</button><button class="button button--primary" type="submit">Simular registro</button></div>
+    </form>
+  </dialog>
+
+  <dialog id="info-dialog" class="modal modal--wide" aria-labelledby="info-dialog-title">
+    <div id="info-dialog-content" class="student-case-dialog"></div>
+  </dialog>
+
+  <dialog id="student-dialog" class="modal modal--wide" aria-label="Expediente demostrativo del estudiante">
+    <div id="student-dialog-content" class="student-case-dialog"></div>
+  </dialog>
+
+  <svg class="svg-sprite" aria-hidden="true" focusable="false">
+    <symbol id="icon-cap" viewBox="0 0 24 24"><path d="m2.5 9 9.5-5 9.5 5-9.5 5-9.5-5Z"/><path d="M6 11.5V17c3.4 3 8.6 3 12 0v-5.5M21.5 9v6"/></symbol>
+    <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M5 12h14M14 7l5 5-5 5"/></symbol>
+    <symbol id="icon-back" viewBox="0 0 24 24"><path d="M19 12H5M10 17l-5-5 5-5"/></symbol>
+    <symbol id="icon-home" viewBox="0 0 24 24"><path d="m3 11 9-8 9 8v9H3v-9Z"/><path d="M9 20v-6h6v6"/></symbol>
+    <symbol id="icon-book" viewBox="0 0 24 24"><path d="M4 4.5c3-.8 5.7-.2 8 1.8v14c-2.3-2-5-2.6-8-1.8v-14ZM20 4.5c-3-.8-5.7-.2-8 1.8v14c2.3-2 5-2.6 8-1.8v-14Z"/></symbol>
+    <symbol id="icon-ai" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="13" rx="4"/><path d="M9 11h.01M15 11h.01M9 15c2 1.3 4 1.3 6 0M12 6V3M9.5 3h5"/></symbol>
+    <symbol id="icon-search" viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m16 16 5 5"/></symbol>
+    <symbol id="icon-question" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M9.7 9a2.5 2.5 0 1 1 3.6 2.3c-.8.4-1.3 1-1.3 2.2M12 17h.01"/></symbol>
+    <symbol id="icon-timeline" viewBox="0 0 24 24"><path d="M6 4v16M6 7h8M6 12h12M6 17h9"/><circle cx="6" cy="7" r="1.5"/><circle cx="6" cy="12" r="1.5"/><circle cx="6" cy="17" r="1.5"/></symbol>
+    <symbol id="icon-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></symbol>
+    <symbol id="icon-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20v-2a6 6 0 0 1 12 0v2M16 5.5a3 3 0 0 1 0 5.8M17 14a5 5 0 0 1 4 4.9V20"/></symbol>
+    <symbol id="icon-family" viewBox="0 0 24 24"><path d="m3 11 9-7 9 7"/><path d="M5 10v10h14V10"/><circle cx="9" cy="13" r="1.8"/><circle cx="15" cy="13" r="1.8"/><path d="M7 19v-1a2.5 2.5 0 0 1 4-2M17 19v-1a2.5 2.5 0 0 0-4-2"/></symbol>
+    <symbol id="icon-bell" viewBox="0 0 24 24"><path d="M18 9a6 6 0 0 0-12 0c0 7-3 7-3 8h18c0-1-3-1-3-8ZM10 21h4"/></symbol>
+    <symbol id="icon-alert" viewBox="0 0 24 24"><path d="M12 3 2.5 20h19L12 3Z"/><path d="M12 9v5M12 17h.01"/></symbol>
+    <symbol id="icon-building" viewBox="0 0 24 24"><path d="M4 21V7l8-4 8 4v14M2 21h20M8 10h2M14 10h2M8 14h2M14 14h2M10 21v-3h4v3"/></symbol>
+    <symbol id="icon-settings" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.7 1.7 0 0 0 .3 1.9l.1.1-2.8 2.8-.1-.1a1.7 1.7 0 0 0-1.9-.3 1.7 1.7 0 0 0-1 1.6v.2h-4V21a1.7 1.7 0 0 0-1-1.6 1.7 1.7 0 0 0-1.9.3l-.1.1L4.2 17l.1-.1a1.7 1.7 0 0 0 .3-1.9A1.7 1.7 0 0 0 3 14H2.8v-4H3a1.7 1.7 0 0 0 1.6-1 1.7 1.7 0 0 0-.3-1.9L4.2 7 7 4.2l.1.1a1.7 1.7 0 0 0 1.9.3 1.7 1.7 0 0 0 1-1.6v-.2h4V3a1.7 1.7 0 0 0 1 1.6 1.7 1.7 0 0 0 1.9-.3l.1-.1L19.8 7l-.1.1a1.7 1.7 0 0 0-.3 1.9 1.7 1.7 0 0 0 1.6 1h.2v4H21a1.7 1.7 0 0 0-1.6 1Z"/></symbol>
+    <symbol id="icon-logout" viewBox="0 0 24 24"><path d="M10 5H4v14h6M14 8l4 4-4 4M8 12h10"/></symbol>
+    <symbol id="icon-menu" viewBox="0 0 24 24"><path d="M4 7h16M4 12h16M4 17h16"/></symbol>
+    <symbol id="icon-eye" viewBox="0 0 24 24"><path d="M2.5 12s3.5-6 9.5-6 9.5 6 9.5 6-3.5 6-9.5 6-9.5-6-9.5-6Z"/><circle cx="12" cy="12" r="2.5"/></symbol>
+    <symbol id="icon-close" viewBox="0 0 24 24"><path d="m6 6 12 12M18 6 6 18"/></symbol>
+    <symbol id="icon-check" viewBox="0 0 24 24"><path d="m5 12 4 4L19 6"/></symbol>
+    <symbol id="icon-lock" viewBox="0 0 24 24"><rect x="5" y="10" width="14" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></symbol>
+  </svg>
+
+  <script src="eli-3d.bundle.js" defer></script>
+  <script src="eli-loader-guard.js" defer></script>
+  <script src="app.js" defer></script>
+</body>
+</html>
